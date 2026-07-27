@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahad Sultan Al-Hadbani — Executive CV</title>
+<meta name="description" content="Fahad Sultan Al-Hadbani — Senior Business Development & Operations Executive, Riyadh, Saudi Arabia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a2238; --ink-soft:#3a4258; --slate:#5a6273;
+    --brass:#a67c3d; --brass-lt:#c69a5b; --paper:#faf9f6;
+    --line:#e4e1d9; --white:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink-soft);background:var(--paper);
+    line-height:1.5;font-size:14.5px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 40px;}
+
+  /* Header */
+  header{background:var(--ink);color:var(--paper);}
+  .head-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+    padding:18px 0 14px;flex-wrap:wrap;}
+  .id .mono{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;
+    border:1px solid var(--brass);color:var(--brass-lt);font-family:'Fraunces',serif;
+    font-size:18px;font-weight:600;margin-bottom:18px;}
+  .id h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2rem,4.4vw,2.9rem);
+    line-height:1.02;color:var(--white);letter-spacing:-.01em;}
+  .id .role{color:var(--brass-lt);font-weight:500;letter-spacing:.13em;text-transform:uppercase;
+    font-size:.8rem;margin-top:12px;}
+  .contact{text-align:right;font-size:.85rem;line-height:1.9;}
+  .contact a,.contact span{color:#d5d8e2;text-decoration:none;display:block;}
+  .contact a:hover{color:var(--brass-lt);}
+
+  /* Metrics */
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #333c56;}
+  .metric{padding:8px 0 11px;text-align:center;border-left:1px solid #333c56;}
+  .metric:first-child{border-left:none;}
+  .metric b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;
+    color:var(--brass-lt);line-height:1;}
+  .metric span{display:block;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;
+    color:#aeb4c4;margin-top:7px;}
+
+  /* Sections */
+  section{padding:11px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .eyebrow{display:flex;align-items:center;gap:12px;font-size:.72rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:10px;}
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  .profile{font-family:'Fraunces',serif;font-size:1.04rem;font-weight:400;line-height:1.5;
+    color:var(--ink);max-width:76ch;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px;}
+  .chips span{font-size:.78rem;color:var(--ink);background:var(--white);border:1px solid var(--line);
+    padding:6px 13px;border-radius:2px;}
+
+  /* Experience */
+  .exp{display:grid;grid-template-columns:120px 1fr;gap:4px 28px;padding:9px 0;
+    border-top:1px solid var(--line);break-inside:avoid;}
+  .exp:first-of-type{border-top:none;padding-top:2px;}
+  .exp .yr{font-size:.8rem;color:var(--slate);font-variant-numeric:tabular-nums;padding-top:3px;}
+  .exp h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.1rem;color:var(--ink);line-height:1.25;}
+  .exp .org{color:var(--brass);font-weight:500;font-size:.85rem;margin:2px 0 0;}
+  .exp ul{margin:5px 0 0;padding-left:16px;}
+  .exp li{margin-bottom:2px;}
+  .exp li::marker{color:var(--brass);}
+
+  /* Earlier career */
+  .earlier{display:grid;grid-template-columns:120px 1fr;gap:3px 28px;padding:6px 0;
+    border-top:1px solid var(--line);break-inside:avoid;}
+  .earlier:first-of-type{border-top:none;}
+  .earlier .yr{font-size:.8rem;color:var(--slate);font-variant-numeric:tabular-nums;}
+  .earlier .r{color:var(--ink);font-weight:600;font-size:.95rem;}
+  .earlier .o{color:var(--brass);font-weight:500;}
+  .earlier .desc{color:var(--slate);font-size:.85rem;margin-top:3px;}
+
+  /* Two-up */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .stack .item{padding:5px 0;border-top:1px solid var(--line);break-inside:avoid;
+    display:flex;justify-content:space-between;gap:16px;align-items:baseline;}
+  .stack .item:first-child{border-top:none;padding-top:0;}
+  .stack .item .t{color:var(--ink);font-weight:600;font-size:.92rem;}
+  .stack .item .m{color:var(--slate);font-size:.82rem;}
+  .stack .item .y{color:var(--brass);font-size:.8rem;font-variant-numeric:tabular-nums;white-space:nowrap;}
+
+  .plain{list-style:none;}
+  .plain li{padding:8px 0;border-top:1px solid var(--line);color:var(--ink);font-weight:500;
+    font-size:.9rem;display:flex;justify-content:space-between;gap:12px;}
+  .plain li:first-child{border-top:none;}
+  .plain li span{color:var(--slate);font-weight:400;}
+
+  .proj{display:flex;flex-wrap:wrap;gap:9px;}
+  .proj span{font-family:'Fraunces',serif;font-size:.95rem;color:var(--ink);background:var(--white);
+    border:1px solid var(--line);padding:8px 16px;}
+  .proj span::before{content:"—";color:var(--brass);margin-right:8px;}
+
+  footer{background:var(--ink);color:#c4c8d4;text-align:center;padding:22px 0;font-size:.82rem;}
+  footer b{color:var(--white);font-family:'Fraunces',serif;font-weight:400;}
+  .btn{display:inline-block;margin-bottom:11px;padding:11px 26px;background:var(--brass);
+    color:var(--ink);font-weight:600;letter-spacing:.02em;text-decoration:none;transition:background .2s;}
+  .btn:hover{background:var(--brass-lt);}
+  .fmeta{color:#aeb4c4;}
+
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--brass-lt);outline-offset:3px;}
+
+  @media(max-width:640px){
+    .head-top{flex-direction:column;align-items:flex-start;}
+    .contact{text-align:left;}
+    .metrics{grid-template-columns:repeat(2,1fr);}
+    .metric:nth-child(3){border-left:none;}
+    .two{grid-template-columns:1fr;gap:0;}
+    .two>div+div{margin-top:26px;}
+    .exp,.earlier{grid-template-columns:1fr;gap:2px;}
+  }
+  @media print{
+    .exp,.earlier,.stack .item,.plain li,.metric,.proj span{break-inside:avoid;}
+    .eyebrow{break-after:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="head-top">
+      <div class="id">
+        <div class="mono">FA</div>
+        <h1>Fahad Sultan Al-Hadbani</h1>
+        <div class="role">Senior Business Development &amp; Operations Executive</div>
+      </div>
+      <div class="contact">
+        <a href="mailto:Falhadbani@hotmail.com">Falhadbani@hotmail.com</a>
+        <a href="tel:+966566890001">+966 56 689 0001</a>
+        <span>Riyadh, Saudi Arabia</span>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric"><b>20+</b><span>Years of Experience</span></div>
+      <div class="metric"><b>70+</b><span>Executive Workshops</span></div>
+      <div class="metric"><b>6,000+</b><span>Audience Reached</span></div>
+      <div class="metric"><b>6</b><span>National Services</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- PROFILE -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Executive Profile</p>
+    <p class="profile">
+      Senior Business Development &amp; Operations Executive with 20+ years driving business growth,
+      expanding strategic partnerships, and leading commercial initiatives across the government and
+      private sectors. Skilled in identifying market opportunities, shaping go-to-market strategies,
+      launching new services, and delivering sustainable growth through high-impact partnerships and
+      innovative capacity-building solutions.
+    </p>
+    <div class="chips">
+      <span>Strategic Partnerships</span><span>Business Development</span>
+      <span>Go-to-Market Strategy</span><span>Commercial Negotiation</span>
+      <span>Account Management</span><span>Market Analysis</span>
+      <span>Pricing &amp; Commercialization</span><span>Stakeholder Engagement</span>
+      <span>Team Leadership</span><span>Capacity Building</span>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP EXPERIENCE -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Leadership Experience</p>
+
+    <div class="exp">
+      <div class="yr">2024 — Present</div>
+      <div>
+        <h3>Business Development Manager — SDAIA Academy</h3>
+        <p class="org">Saudi Authority for Data &amp; Artificial Intelligence</p>
+        <ul>
+          <li>Drive the expansion of national Data &amp; AI training services by establishing strategic partnerships and leading end-to-end business development.</li>
+          <li>Own market research, service commercialization, pricing strategy, proposal development, and stakeholder negotiations.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="yr">2022 — 2023</div>
+      <div>
+        <h3>Director of Training Department — Tawteen</h3>
+        <p class="org">Ministry of Human Resources &amp; Social Development</p>
+        <ul>
+          <li>Led execution of the ministry's workforce-development strategy with cross-functional stakeholders and senior leadership.</li>
+          <li>Established and expanded partnerships with government, semi-government, and private training providers to strengthen the national training ecosystem.</li>
+          <li>Directed end-to-end procurement (RFA/RFP, vendor evaluation, commercial negotiation, PO management) and defined business requirements for the eligibility platform.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="yr">2022</div>
+      <div>
+        <h3>Senior Business Development Manager</h3>
+        <p class="org">Tarjama Translation Company — Dubai, Jordan &amp; Riyadh</p>
+        <ul>
+          <li>Identified and developed new business across government and enterprise sectors in Saudi Arabia.</li>
+          <li>Built strategic client relationships and led commercial negotiations with tailored, objective-driven proposals.</li>
+          <li>Managed and coached the KSA business-development team, driving sales performance and pipeline growth.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="yr">2021 — 2022</div>
+      <div>
+        <h3>Business Development Manager</h3>
+        <p class="org">WAFY Network Company for Information Technology</p>
+        <ul>
+          <li>Established and launched the Riyadh branch, driving market expansion and regional presence.</li>
+          <li>Built and led a high-performing team (recruitment, onboarding, performance) and set the branch growth strategy.</li>
+          <li>Managed key accounts and led commercial discussions to expand digital-transformation services.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="yr">2018 — 2021</div>
+      <div>
+        <h3>Assistant Manager — Training &amp; Operations</h3>
+        <p class="org">Al Elm Information Security Company</p>
+        <ul>
+          <li>Established and led a customer-enablement function as the primary engagement channel between Elm and its strategic clients.</li>
+          <li>Defined the unit's vision, operating model, and growth roadmap; delivered 70+ executive workshops to boost adoption and retention.</li>
+          <li>Partnered with product managers to translate customer feedback into product improvements.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="yr">2016 — 2018</div>
+      <div>
+        <h3>Senior Account Manager — Government Sector</h3>
+        <p class="org">Al Elm Information Security Company</p>
+        <ul>
+          <li>Managed strategic government accounts (Presidency of State Security, Ministry of Interior), building trusted executive relationships.</li>
+          <li>Identified expansion opportunities, developed commercial proposals, and led contract negotiations across financial, legal, and operational requirements.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EARLIER CAREER -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Earlier Career</p>
+    <div class="earlier"><div class="yr">2016</div><div><span class="r">Deputy Manager</span> · <span class="o">Royal Commission for Jubail &amp; Yanbu</span></div></div>
+    <div class="earlier"><div class="yr">2008 — 2014</div><div><span class="r">Service &amp; Operations Project Manager</span> · <span class="o">Al Elm Information Security</span></div></div>
+    <div class="earlier"><div class="yr">2005 — 2008</div><div><span class="r">Customer Service Supervisor</span> · <span class="o">Al Rajhi National Bank</span></div></div>
+    <div class="earlier"><div class="yr">2003 — 2005</div><div><span class="r">Branch Manager, KIA</span> · <span class="o">Al Haj Husain Ali Redha Co.</span></div></div>
+  </div>
+</section>
+
+<!-- ADVISORY & TRAINING -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Advisory &amp; Training</p>
+
+    <div class="exp">
+      <div class="yr">Part-time</div>
+      <div>
+        <h3>Business Development Consultant</h3>
+        <p class="org">Experts Academy · AchieveOne · ARRC Consulting</p>
+        <ul>
+          <li>Advised organizations on establishing and structuring business-development functions aligned with growth objectives.</li>
+          <li>Designed BD frameworks, sales processes, and partnership strategies, and mentored leadership teams on customer acquisition.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="yr">Part-time</div>
+      <div>
+        <h3>Sales &amp; Business Development Trainer &amp; Keynote Speaker</h3>
+        <p class="org">Riyadh Chamber of Commerce · AlManea Trading</p>
+        <ul>
+          <li>Delivered public keynote sessions to 1,000+ participants per event (6,000+ reached), promoting sales excellence and customer-centric practices.</li>
+          <li>Trained sales and retail teams on negotiation, communication, and engagement; built practical materials and methodologies that shifted reps from reactive support to proactive selling.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION + CERTIFICATIONS -->
+<section>
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <p class="eyebrow">Education</p>
+        <div class="stack">
+          <div class="item"><div><div class="t">Leadership Development Program</div><div class="m">IMD Business School · 8-month program</div></div><div class="y">2018</div></div>
+          <div class="item"><div><div class="t">BBA, Business Administration</div><div class="m">Imam Muhammad ibn Saud Islamic University · GPA 3.61/5</div></div><div class="y">2014</div></div>
+          <div class="item"><div><div class="t">Diploma, Executive Secretary</div><div class="m">Institute of Public Administration · GPA 4.04/5</div></div><div class="y">2008</div></div>
+          <div class="item"><div><div class="t">Diploma, Reception</div><div class="m">Commercial Chamber</div></div><div class="y">2003</div></div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Certifications &amp; Awards</p>
+        <div class="stack">
+          <div class="item"><div><div class="t">Best Trainer</div><div class="m">Riyadh Chamber of Commerce</div></div><div class="y">2018</div></div>
+          <div class="item"><div><div class="t">National Engaged Leader Award</div><div class="m">NSLS · California State University, San Bernardino</div></div><div class="y">2014–15</div></div>
+          <div class="item"><div><div class="t">Recognition for Achievement</div><div class="m">Ministry of Labor, Riyadh</div></div><div class="y">2013</div></div>
+          <div class="item"><div><div class="t">Recognition for Achievement</div><div class="m">Al Elm Information Security</div></div><div class="y">2012</div></div>
+          <div class="item"><div><div class="t">Best Employee &amp; Best Supervisor</div><div class="m">Al Rajhi National Bank</div></div><div class="y">2006–07</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NATIONAL SERVICES + LANGUAGES -->
+<section>
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <p class="eyebrow">National Services</p>
+        <div class="proj">
+          <span>Eskan</span><span>Yaqeen</span><span>Nather</span><span>Muqeem</span><span>Hafiz</span><span>Citizen's Account</span>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Languages</p>
+        <ul class="plain">
+          <li>Arabic <span>Native</span></li>
+          <li>English <span>Professional</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="btn" href="mailto:Falhadbani@hotmail.com">Get in touch</a>
+    <div class="fmeta"><b>Fahad Sultan Al-Hadbani</b> &nbsp;·&nbsp; +966 56 689 0001 &nbsp;·&nbsp; Riyadh, KSA</div>
+  </div>
+</footer>
+
+</body>
+</html>
