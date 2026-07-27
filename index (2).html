@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fahad Al-Hadbani — Senior Business Development Executive</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #0D1117;
+      --ink-mid:   #3A3F4B;
+      --ink-light: #6B7280;
+      --rule:      #E2E5EA;
+      --accent:    #1B4FD8;
+      --accent-dim:#EBF0FF;
+      --bg:        #FAFBFC;
+      --white:     #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--ink);
+      color: var(--white);
+      padding: 72px 48px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: .12;
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: end;
+    }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+    .hero-title {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #93B4FF;
+      margin-top: 10px;
+    }
+    .hero-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: right;
+      font-size: .82rem;
+      color: #B0BFCF;
+    }
+    .hero-contact a { color: #93B4FF; text-decoration: none; }
+    .hero-contact a:hover { color: var(--white); }
+
+    /* ── STATS BAR ── */
+    .stats {
+      background: var(--accent);
+      padding: 0 48px;
+    }
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+    }
+    .stat {
+      flex: 1;
+      padding: 20px 0;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.2);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.7);
+      margin-top: 4px;
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-top: 56px;
+    }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── PROFILE ── */
+    .profile-text {
+      font-size: 1.05rem;
+      color: var(--ink-mid);
+      line-height: 1.75;
+      max-width: 720px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 100px;
+      letter-spacing: .02em;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 36px; }
+    .exp-item { display: grid; grid-template-columns: 140px 1fr; gap: 24px; }
+    .exp-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      color: var(--ink-light);
+      padding-top: 3px;
+      line-height: 1.5;
+    }
+    .exp-body {}
+    .exp-role {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+    .exp-company {
+      font-size: .82rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .exp-bullets {
+      margin-top: 10px;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .exp-bullets li {
+      font-size: .88rem;
+      color: var(--ink-mid);
+      padding-left: 16px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--rule);
+      font-size: .8rem;
+    }
+
+    /* ── EARLIER CAREER ── */
+    .earlier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 32px;
+    }
+    .earlier-item {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      font-size: .86rem;
+    }
+    .earlier-year {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .7rem;
+      color: var(--ink-light);
+      white-space: nowrap;
+      min-width: 68px;
+    }
+    .earlier-role { color: var(--ink-mid); }
+
+    /* ── TWO-COL ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+
+    /* ── EDUCATION ── */
+    .edu-list { display: flex; flex-direction: column; gap: 20px; }
+    .edu-item {}
+    .edu-degree { font-weight: 600; font-size: .95rem; color: var(--ink); }
+    .edu-school { font-size: .82rem; color: var(--accent); margin-top: 2px; }
+    .edu-meta { font-size: .78rem; color: var(--ink-light); margin-top: 2px; }
+
+    /* ── CERTIFICATIONS / AWARDS ── */
+    .award-list { display: flex; flex-direction: column; gap: 14px; }
+    .award-item { display: flex; gap: 14px; align-items: flex-start; }
+    .award-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .award-name { font-weight: 600; font-size: .88rem; color: var(--ink); }
+    .award-by { font-size: .78rem; color: var(--ink-light); }
+
+    /* ── ADVISORY ── */
+    .advisory-block { margin-bottom: 28px; }
+    .advisory-role {
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .advisory-orgs {
+      font-size: .8rem;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .advisory-desc { font-size: .88rem; color: var(--ink-mid); line-height: 1.65; }
+
+    /* ── NATIONAL SERVICES ── */
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .service-tag {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      color: var(--ink-mid);
+      font-size: .8rem;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 6px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--ink);
+      color: #6B7280;
+      text-align: center;
+      font-size: .75rem;
+      padding: 24px 48px;
+      letter-spacing: .04em;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      .hero { padding: 40px 32px 32px; }
+      .stats { display: none; }
+      .page { padding: 0 32px 40px; }
+      body { font-size: 13px; }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      .hero { padding: 48px 24px 40px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-contact { text-align: left; }
+      .stats { padding: 0 24px; }
+      .page { padding: 0 24px 60px; }
+      .exp-item { grid-template-columns: 1fr; gap: 4px; }
+      .two-col { grid-template-columns: 1fr; }
+      .earlier-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-name">Fahad Sultan<br>Al-Hadbani</div>
+      <div class="hero-title">Senior Business Development &amp; Operations Executive</div>
+    </div>
+    <div class="hero-contact">
+      <a href="mailto:Falhadbani@hotmail.com">Falhadbani@hotmail.com</a>
+      <a href="tel:+966566890001">+966 56 689 0001</a>
+      <span>Riyadh, Saudi Arabia</span>
+    </div>
+  </div>
+</header>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-number">20+</div>
+      <div class="stat-label">Years of Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">70+</div>
+      <div class="stat-label">Executive Workshops</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6,000+</div>
+      <div class="stat-label">Audience Reached</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6</div>
+      <div class="stat-label">National Services</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="page">
+
+  <!-- PROFILE -->
+  <section class="section">
+    <div class="section-label">Executive Profile</div>
+    <p class="profile-text">
+      Senior Business Development &amp; Operations Executive with 20+ years driving business growth,
+      expanding strategic partnerships, and leading commercial initiatives across the government and
+      private sectors. Skilled in identifying market opportunities, shaping go-to-market strategies,
+      launching new services, and delivering sustainable growth through high-impact partnerships and
+      innovative capacity-building solutions.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="section-label">Core Competencies</div>
+    <div class="skills-grid">
+      <span class="skill-tag">Strategic Partnerships</span>
+      <span class="skill-tag">Business Development</span>
+      <span class="skill-tag">Go-to-Market Strategy</span>
+      <span class="skill-tag">Commercial Negotiation</span>
+      <span class="skill-tag">Account Management</span>
+      <span class="skill-tag">Market Analysis</span>
+      <span class="skill-tag">Pricing &amp; Commercialization</span>
+      <span class="skill-tag">Stakeholder Engagement</span>
+      <span class="skill-tag">Team Leadership</span>
+      <span class="skill-tag">Capacity Building</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <div class="section-label">Leadership Experience</div>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-period">2024 — Present</div>
+        <div class="exp-body">
+          <div class="exp-role">Business Development Manager</div>
+          <div class="exp-company">SDAIA Academy — Saudi Authority for Data &amp; Artificial Intelligence</div>
+          <ul class="exp-bullets">
+            <li>Drive expansion of national Data &amp; AI training services by establishing strategic partnerships and leading end-to-end business development.</li>
+            <li>Own market research, service commercialization, pricing strategy, proposal development, and stakeholder negotiations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">2022 — 2023</div>
+        <div class="exp-body">
+          <div class="exp-role">Director of Training Department</div>
+          <div class="exp-company">Tawteen — Ministry of Human Resources &amp; Social Development</div>
+          <ul class="exp-bullets">
+            <li>Led execution of the ministry's workforce-development strategy with cross-functional stakeholders and senior leadership.</li>
+            <li>Established and expanded partnerships with government, semi-government, and private training providers to strengthen the national training ecosystem.</li>
+            <li>Directed end-to-end procurement (RFA/RFP, vendor evaluation, commercial negotiation, PO management) and defined business requirements for the eligibility platform.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">2022</div>
+        <div class="exp-body">
+          <div class="exp-role">Senior Business Development Manager</div>
+          <div class="exp-company">Tarjama Translation Company — Dubai, Jordan &amp; Riyadh</div>
+          <ul class="exp-bullets">
+            <li>Identified and developed new business across government and enterprise sectors in Saudi Arabia.</li>
+            <li>Built strategic client relationships and led commercial negotiations with tailored, objective-driven proposals.</li>
+            <li>Managed and coached the KSA business-development team, driving sales performance and pipeline growth.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">2021 — 2022</div>
+        <div class="exp-body">
+          <div class="exp-role">Business Development Manager</div>
+          <div class="exp-company">WAFY Network Company for Information Technology</div>
+          <ul class="exp-bullets">
+            <li>Established and launched the Riyadh branch, driving market expansion and regional presence.</li>
+            <li>Built and led a high-performing team (recruitment, onboarding, performance) and set the branch growth strategy.</li>
+            <li>Managed key accounts and led commercial discussions to expand digital-transformation services.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">2018 — 2021</div>
+        <div class="exp-body">
+          <div class="exp-role">Assistant Manager — Training &amp; Operations</div>
+          <div class="exp-company">Al Elm Information Security Company</div>
+          <ul class="exp-bullets">
+            <li>Established and led a customer-enablement function as the primary engagement channel between Elm and its strategic clients.</li>
+            <li>Defined the unit's vision, operating model, and growth roadmap; delivered 70+ executive workshops to boost adoption and retention.</li>
+            <li>Partnered with product managers to translate customer feedback into product improvements.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-period">2016 — 2018</div>
+        <div class="exp-body">
+          <div class="exp-role">Senior Account Manager — Government Sector</div>
+          <div class="exp-company">Al Elm Information Security Company</div>
+          <ul class="exp-bullets">
+            <li>Managed strategic government accounts (Presidency of State Security, Ministry of Interior), building trusted executive relationships.</li>
+            <li>Identified expansion opportunities, developed commercial proposals, and led contract negotiations across financial, legal, and operational requirements.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EARLIER CAREER -->
+  <section class="section">
+    <div class="section-label">Earlier Career</div>
+    <div class="earlier-grid">
+      <div class="earlier-item">
+        <span class="earlier-year">2016</span>
+        <span class="earlier-role">Deputy Manager · Royal Commission for Jubail &amp; Yanbu</span>
+      </div>
+      <div class="earlier-item">
+        <span class="earlier-year">2008 — 2014</span>
+        <span class="earlier-role">Service &amp; Operations Project Manager · Al Elm Information Security</span>
+      </div>
+      <div class="earlier-item">
+        <span class="earlier-year">2005 — 2008</span>
+        <span class="earlier-role">Customer Service Supervisor · Al Rajhi National Bank</span>
+      </div>
+      <div class="earlier-item">
+        <span class="earlier-year">2003 — 2005</span>
+        <span class="earlier-role">Branch Manager, KIA · Al Haj Husain Ali Redha Co.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & AWARDS -->
+  <div class="two-col">
+
+    <!-- EDUCATION -->
+    <section class="section">
+      <div class="section-label">Education</div>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-degree">Leadership Development Program</div>
+          <div class="edu-school">IMD Business School</div>
+          <div class="edu-meta">8-month program · 2018</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">BBA, Business Administration</div>
+          <div class="edu-school">Imam Muhammad ibn Saud Islamic University</div>
+          <div class="edu-meta">GPA 3.61/5 · 2014</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Diploma, Executive Secretary</div>
+          <div class="edu-school">Institute of Public Administration</div>
+          <div class="edu-meta">GPA 4.04/5 · 2008</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Diploma, Reception</div>
+          <div class="edu-school">Commercial Chamber</div>
+          <div class="edu-meta">2003</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & AWARDS -->
+    <section class="section">
+      <div class="section-label">Certifications &amp; Awards</div>
+      <div class="award-list">
+        <div class="award-item">
+          <div class="award-dot"></div>
+          <div>
+            <div class="award-name">Best Trainer</div>
+            <div class="award-by">Riyadh Chamber of Commerce · 2018</div>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-dot"></div>
+          <div>
+            <div class="award-name">National Engaged Leader Award</div>
+            <div class="award-by">NSLS · California State University, San Bernardino · 2014–15</div>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-dot"></div>
+          <div>
+            <div class="award-name">Recognition for Achievement</div>
+            <div class="award-by">Ministry of Labor, Riyadh · 2013</div>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-dot"></div>
+          <div>
+            <div class="award-name">Recognition for Achievement</div>
+            <div class="award-by">Al Elm Information Security · 2012</div>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-dot"></div>
+          <div>
+            <div class="award-name">Best Employee &amp; Best Supervisor</div>
+            <div class="award-by">Al Rajhi National Bank · 2006–07</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ADVISORY & TRAINING -->
+  <section class="section">
+    <div class="section-label">Advisory &amp; Training</div>
+    <div class="advisory-block">
+      <div class="advisory-role">Part-time Business Development Consultant</div>
+      <div class="advisory-orgs">Experts Academy · AchieveOne · ARRC Consulting</div>
+      <div class="advisory-desc">Advised organizations on establishing and structuring business-development functions aligned with growth objectives. Designed BD frameworks, sales processes, and partnership strategies, and mentored leadership teams on customer acquisition.</div>
+    </div>
+    <div class="advisory-block">
+      <div class="advisory-role">Part-time Sales &amp; Business Development Trainer &amp; Keynote Speaker</div>
+      <div class="advisory-orgs">Riyadh Chamber of Commerce · AlManea Trading</div>
+      <div class="advisory-desc">Delivered public keynote sessions to 1,000+ participants per event (6,000+ reached), promoting sales excellence and customer-centric practices. Trained sales and retail teams on negotiation, communication, and engagement; built practical materials and methodologies that shifted reps from reactive support to proactive selling.</div>
+    </div>
+  </section>
+
+  <!-- NATIONAL SERVICES -->
+  <section class="section">
+    <div class="section-label">National Services</div>
+    <div class="services-list">
+      <span class="service-tag">Eskan</span>
+      <span class="service-tag">Yaqeen</span>
+      <span class="service-tag">Nather</span>
+      <span class="service-tag">Muqeem</span>
+      <span class="service-tag">Hafiz</span>
+      <span class="service-tag">Citizen's Account</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  Fahad Sultan Al-Hadbani &nbsp;·&nbsp; Riyadh, Saudi Arabia &nbsp;·&nbsp; Falhadbani@hotmail.com
+</footer>
+
+</body>
+</html>
